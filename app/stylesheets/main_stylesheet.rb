@@ -18,4 +18,9 @@ class MainStylesheet < ApplicationStylesheet
     st.font = font.medium
   end
 
+  def my_view_button(st)
+    st.frame = { top: 150, w: 200, h: 20 }
+    st.text = "My View"
+  end
+
 end

@@ -1,4 +1,4 @@
-class MainController < UIViewController 
+class MainController < UIViewController
 
   def viewDidLoad
     super
@@ -12,6 +12,13 @@ class MainController < UIViewController
 
     # Create your UIViews here
     @hello_world_label = rmq.append(UILabel, :hello_world).get
+
+    # step 1
+    @my_view_button = rmq.append(UIButton.buttonWithType(UIButtonTypeRoundedRect), :my_view_button).get
+    rmq(@my_view_button).on(:tap) do
+      puts "my view button clicked!"
+    end
+
   end
 
   def init_nav
@@ -48,8 +55,8 @@ end
 
 __END__
 
-# You don't have to reapply styles to all UIViews, if you want to optimize, 
-# another way to do it is tag the views you need to restyle in your stylesheet, 
+# You don't have to reapply styles to all UIViews, if you want to optimize,
+# another way to do it is tag the views you need to restyle in your stylesheet,
 # then only reapply the tagged views, like so:
 def logo(st)
   st.frame = {t: 10, w: 200, h: 96}
