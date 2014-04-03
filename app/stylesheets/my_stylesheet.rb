@@ -1,4 +1,4 @@
-class MainStylesheet < ApplicationStylesheet
+class MyStylesheet < ApplicationStylesheet
 
   def setup
     # Add sytlesheet specific setup stuff here.
@@ -6,22 +6,23 @@ class MainStylesheet < ApplicationStylesheet
   end
 
   def root_view(st)
-    st.background_color = color.white
+    st.background_color = color.red
   end
 
-  def hello_world(st)
-    st.frame = {t: 100, w: 200, h: 18}
+  def info(st)
+    st.frame = {t: 100, w: 200, h: 25}
     st.centered = :horizontal
     st.text_alignment = :center
-    st.text = 'Hello World'
-    st.color = color.battleship_gray
+    st.text = 'My own view!'
+    st.color = color.white
     st.font = font.medium
   end
 
-  def my_view_button(st)
+  def hide_button(st)
     st.frame = { top: 150, w: 200, h: 20 }
-    st.text = "My View"
+    st.text = "Hide view"
     st.centered = :horizontal
   end
+
 
 end

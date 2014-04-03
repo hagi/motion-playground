@@ -16,10 +16,17 @@ class MainController < UIViewController
     # step 1
     @my_view_button = rmq.append(UIButton.buttonWithType(UIButtonTypeRoundedRect), :my_view_button).get
     rmq(@my_view_button).on(:tap) do
+      show_my_view
       puts "my view button clicked!"
     end
 
   end
+
+  def show_my_view
+      @my_controller ||= MyController.alloc.initWithNibName(nil, bundle:nil)
+      presentViewController(@my_controller, animated:true, completion: -> { puts "my view presented" })
+  end
+
 
   def init_nav
     self.title = 'Title Here'

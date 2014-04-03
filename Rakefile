@@ -9,7 +9,7 @@ require 'ruby_motion_query'
 Motion::Project::App.setup do |app|
 
   app.name = 'motion-playground'
-  app.identifier = 'com.your_domain_here.motion-playground'
+  app.identifier = 'net.lazylabs.motion-playground'
   app.short_version = '0.1.0'
   app.version = app.short_version
 
@@ -40,5 +40,5 @@ Motion::Project::App.setup do |app|
   # app.pods do
   #   pod 'AFNetworking'
   # end
- 
+
 end
