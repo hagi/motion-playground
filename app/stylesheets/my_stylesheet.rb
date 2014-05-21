@@ -19,9 +19,13 @@ class MyStylesheet < ApplicationStylesheet
   end
 
   def hide_button(st)
-    st.frame = { top: 150, w: 200, h: 20 }
+    st.frame = { t: 150, w: 200, h: 40 }
     st.text = "Hide view"
     st.centered = :horizontal
+    st.border_color = color.from_hex('#f5f5f5').CGColor
+    st.border_width = 1
+    st.corner_radius = 5
+    st.background_color = color.from_rgba(255, 255, 255, 0.3)
   end
 
 
