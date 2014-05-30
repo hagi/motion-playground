@@ -1,5 +1,8 @@
 class AppDelegate
+  include CDQ
+
   attr_reader :window
+
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
@@ -8,6 +11,7 @@ class AppDelegate
     @window.rootViewController = UINavigationController.alloc.initWithRootViewController(@main_controller)
 
     @window.makeKeyAndVisible
+    cdq.setup
     true
   end
 end

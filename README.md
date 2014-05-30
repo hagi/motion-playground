@@ -22,6 +22,13 @@ $ rmq create motion-playground
 - http://rubymotion-tutorial.com/8-testing/
 - http://blog.motioninmotion.tv/rubymotion-testing-tools
 
+##### step 4: CDQ
+- https://github.com/infinitered/cdq
+```
+$ rake schema:build
+$ cdq create model task
+```
+- bad model test generator: https://github.com/infinitered/cdq/issues/4
 
 
 
