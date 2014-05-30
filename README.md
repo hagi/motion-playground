@@ -20,7 +20,7 @@ $ rmq create motion-playground
 - http://integrallis.com/2013/03/tdd_in_ios_w_ruby_motion_part_i
 - http://www.rubymotion.com/developer-center/articles/testing/
 - http://rubymotion-tutorial.com/8-testing/
-
+- http://blog.motioninmotion.tv/rubymotion-testing-tools
 
 
 
