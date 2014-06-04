@@ -24,4 +24,11 @@ class MainStylesheet < ApplicationStylesheet
     st.centered = :horizontal
   end
 
+  def card_game_button(st)
+    st.frame = { top: 180, w: 200, h: 20 }
+    st.text = 'card game'
+    st.centered = :horizontal
+    st.color = color.battleship_gray
+  end
+
 end

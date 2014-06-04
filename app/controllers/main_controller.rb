@@ -20,6 +20,9 @@ class MainController < UIViewController
       puts "my view button clicked!"
     end
 
+    generate_card_game_button
+
+
   end
 
   def show_my_view
@@ -56,6 +59,20 @@ class MainController < UIViewController
   def willAnimateRotationToInterfaceOrientation(orientation, duration: duration)
     rmq.all.reapply_styles
   end
+
+
+  def generate_card_game_button
+    @card_game_button = rmq.append(UIButton, :card_game_button).get
+    rmq(@card_game_button).on(:tap) do
+      show_card_game
+    end
+  end
+
+  def show_card_game
+    @card_game_controller ||= CardGameController.new
+    presentViewController(@card_game_controller, animated:true, completion: nil)
+  end
+
 
 end
 

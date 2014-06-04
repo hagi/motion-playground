@@ -16,4 +16,11 @@ describe "Main controller" do
     view('My own view!').class.should == UILabel
   end
 
+  it "has 'card game' button which pops 'Card Game' view" do
+    view('card game').class.should == UIButton
+    tap('card game')
+
+    controller.instance_variable_get('@card_game_controller').nil?.should == false
+  end
+
 end
