@@ -15,7 +15,6 @@ class CardGameControllerStylesheet < ApplicationStylesheet
     st.frame = { top: 200, w: 100, h: 150 }
     st.color = color.black
     st.centered = :both
-    st.text = "A♣"
     st.font = font.system(20)
     st.background_image = image.resource('front')
   end
@@ -27,6 +26,11 @@ class CardGameControllerStylesheet < ApplicationStylesheet
     st.background_image = image.resource('back')
     st.centered = :both
 
+  end
+
+  def flips_label(st)
+    st.frame = { top: 450, w: 200, h: 20 }
+    st.color = color.white
   end
 
 end

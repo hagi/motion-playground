@@ -8,18 +8,39 @@ class CardGameController < UIViewController
 
     # Create your views here
     @card = rmq.append(UIButton, :card_front).get
+    @card.accessibilityLabel = 'card' # TODO: poor solution for testing difficulty
     rmq(@card).on(:tap) do |sender|
       puts sender
       card_button_touched
     end
+
+    @flips_label = rmq.append(UILabel, :flips_label).get
   end
 
   def card_button_touched
     if @card.currentTitle == ''
-      rmq(@card).apply_style(:card_front)
+      rmq(@card).apply_style(:card_front) #.style { |st| st.text = draw_card.contents }
+      @card.setTitle(draw_card.contents, forState:UIControlStateNormal)
+
     else
       rmq(@card).apply_style(:card_back)
     end
+    self.flips_count += 1
+  end
+
+  def flips_count=(count)
+    @flips_count = count
+    @flips_label.text = "Flips: #{@flips_count}"
+    puts "flips_count changed to #{count}"
+  end
+
+  def flips_count
+    @flips_count || 0
+  end
+
+  def draw_card
+    @deck ||= PlayingDeck.new
+    @deck.draw_random_card
   end
 
   # Remove if you are only supporting portrait
