@@ -34,7 +34,8 @@ $ cdq create model task
 - https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550
 - `?` how to get something like 'arc4random()' this in ruby motion?
 
-
+##### step 6: RMQ 0.6 & grid fun
+- http://rubymotionquery.com/documentation/#post-147
 
 
 

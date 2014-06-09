@@ -29,7 +29,7 @@ class CardGameControllerStylesheet < ApplicationStylesheet
   end
 
   def flips_label(st)
-    st.frame = { top: 450, w: 200, h: 20 }
+    st.frame = "a15:j15" # { from_bottom: 10, w: 200, h: 20 }
     st.color = color.white
   end
 
