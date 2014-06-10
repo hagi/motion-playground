@@ -21,8 +21,7 @@ class MainController < UIViewController
     end
 
     generate_card_game_button
-
-
+    generate_area_button
   end
 
   def show_my_view
@@ -68,11 +67,23 @@ class MainController < UIViewController
     end
   end
 
+  def generate_area_button
+    @area_button = rmq.append(UIButton, :area_button).get
+    rmq(@area_button).on(:tap) do
+      show_area
+    end
+  end
+
+
   def show_card_game
     @card_game_controller ||= CardGameController.new
     presentViewController(@card_game_controller, animated:true, completion: nil)
   end
 
+  def show_area
+    @area_controller ||= AreaController.new
+    presentViewController(@area_controller, animated:true, completion: nil)
+  end
 
 end
 

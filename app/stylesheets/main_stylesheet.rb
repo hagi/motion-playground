@@ -31,4 +31,12 @@ class MainStylesheet < ApplicationStylesheet
     st.color = color.battleship_gray
   end
 
+  def area_button(st)
+    st.frame = { top: 210, w: 200, h: 20 }
+    st.text = 'area'
+    st.centered = :horizontal
+    st.color = color.battleship_gray
+  end
+
+
 end

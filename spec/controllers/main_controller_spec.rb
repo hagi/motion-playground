@@ -23,4 +23,11 @@ describe "Main controller" do
     controller.instance_variable_get('@card_game_controller').nil?.should == false
   end
 
+  it "has 'area' button" do
+    view('area').class.should == UIButton
+    tap('area')
+
+    controller.instance_variable_get('@area_controller').nil?.should == false
+  end
+
 end
