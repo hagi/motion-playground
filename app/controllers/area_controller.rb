@@ -8,15 +8,25 @@ class AreaController < UIViewController
 
     # Create your views here
     20.times do
-      rmq.append(Box).move(l: rand(300), t: rand(450)).on(:tap) { |sender| escape(sender) }
+      box = rmq.append(Box).move(l: rand(7) * 40, t: rand(11) * 40).on(:tap) { |sender| escape(sender) }
+      append_swipes(box)
     end
 
+  end
+
+  def append_swipes(box)
+    box.on(:swipe_left) { |sender| rmq.animate { rmq(sender).nudge(left: 40) } }
+    box.on(:swipe_right) { |sender| rmq.animate { rmq(sender).nudge(right: 40) } }
+    box.on(:swipe_up) { |sender| rmq.animate { rmq(sender).nudge(up: 40) } }
+    box.on(:swipe_down) { |sender| rmq.animate { rmq(sender).nudge(down: 40) } }
   end
 
   def escape(sender)
     opts = {}
     opts[[:down, :up, :left, :right].sample] = 40
-    rmq(sender).nudge(opts)
+    rmq.animate do
+      rmq(sender).nudge(opts)
+    end
   end
 
   # Remove if you are only supporting portrait
